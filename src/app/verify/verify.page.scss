@@ -1,0 +1,42 @@
+.ion-toolbar {
+    --background: var(--main-bg-color) !important;
+}
+
+ion-button {
+    --background: var(--main-bg-color);
+    --border-radius: 8px;
+    border-radius: 8px;
+    width: 100%;
+    height: 44px;
+}
+.sc-ion-input-md-h:not(.legacy-input) {
+    min-height: 35px;
+}
+
+ion-row {
+    ion-col {
+        // display: flex;
+        padding-bottom: 0px;
+        padding: 0px 5px;
+        ion-input {
+            background: var(--fottercss);
+            color: black;
+            border-radius: 10px;
+            text-align: center;
+            height: 44px;
+            width: 44px;
+            --padding-start: 0px;
+            font-weight: 400;
+            margin: 0px 7px;
+            border-radius: 8px;
+            font-family: 'Roboto', sans-serif;
+            --highlight-color-focused: none;
+            --highlight-color-valid: none;
+            --highlight-color-invalid: none;
+            --highlight-color: none;
+        }
+        ion-input :active {
+            color:  red ;
+        }
+    }
+}

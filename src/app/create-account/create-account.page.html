@@ -1,0 +1,55 @@
+<ion-header class="h-[59px] headerCss w-full flex justify-center items-center text-center">
+  <img src="assets/vinmart.png" alt="" class=" h-20 w-20 object-contain">
+  <p class="text-center text-2xl text-black font-bold">Vin<span class="mart text-2xl font-bold headerText">marts</span></p>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+<div class="px-6 flex justify-center items-center flex-col h-full w-full bg-white ">
+  <h1 class="text-center font-bold text-black text-2xl mb-3">Sign Up</h1>
+  <ion-input class="rounded-lg rounded-s-lg mb-2" label="Full Name" label-placement="floating" fill="outline"
+  placeholder="Full Name"></ion-input>
+
+  <ion-input  class="rounded-lg rounded-s-lg mb-2" label="Email" label-placement="floating" fill="outline"
+    placeholder="Email"></ion-input>
+
+    <div class="w-full"  style="margin-bottom: -10px; margin-top:-22px">
+      <ion-icon name="eye" class="text-black  relative top-10 left-[88%] text-xl" slot="end"></ion-icon>
+  <ion-input class="rounded-lg rounded-s-lg " label="Password" label-placement="floating" fill="outline"
+    placeholder="Password"></ion-input>
+    </div>
+    <div class="w-full " >
+      <ion-icon name="eye" class=" text-black relative top-10 left-[88%] text-xl" slot="end"></ion-icon>
+    <ion-input class="rounded-lg rounded-s-lg" label=" Confirm Password" label-placement="floating" fill="outline"
+    placeholder=" Confirm Password"></ion-input>
+  </div>
+    <div>
+    <!-- <ion-icon name="eye" class="fixed top-[330px]  right-10 text-xl"></ion-icon> -->
+  </div>
+
+  <div class="flex justify-start items-start flex-row text-start mt-2 mb-3">
+    <ion-checkbox class="bg-slate-500 mt-2"></ion-checkbox>
+    <p class="ml-2  text-black text-base">
+      By continue , you agree with VinMart's
+      <span class="clr text-base"> terms & conditions </span > and <span class="clr text-base">privacy
+        policy</span> .
+    </p>
+  </div>
+  <ion-button class="w-[100%]  h-[40px] mb-2 " [routerLink]="['/tabs/home']">Sign Up</ion-button>
+  <p class="text-black text-lg mb-3">Already have an account <span class="clr" [routerLink]="['/login']">Sign In</span></p>
+ 
+    <div class="w-full h-[0.6px] bg-black  flex justify-center items-center text-center mb-3">
+      <span class="clr bg-white text-base px-2">Quick Access</span>
+    </div>
+ 
+ 
+<div class="flex text-justify justify-between w-full">
+<p class="clr">Terms & Condition</p>
+<p class="clr">Privacy Policy</p>
+</div>
+</div>
+
+
+</ion-content>
+<ion-footer class=" fottercss h-[40px] w-full flex justify-center items-center text-center ft text-black text-base ">© 2033-2024 ,Vinmarts (An
+online offline store)</ion-footer>

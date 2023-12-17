@@ -1,0 +1,21 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { ProductDetailsPageRoutingModule } from './product-details-routing.module';
+import { ProductDetailsPage } from './product-details.page';
+import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    ExploreContainerComponentModule,
+    ProductDetailsPageRoutingModule
+  ],
+  declarations: [ProductDetailsPage],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+export class ProductDetailsPageModule {}

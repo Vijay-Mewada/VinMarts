@@ -1,0 +1,50 @@
+<ion-header class="shadow-none h-20 bg-white flex  justify-around items-center">
+  <ion-icon class="clr h-8 w-10 " name="arrow-back-outline" ></ion-icon>
+    <div class="h-[3px] degineCss w-56 flex justify-between items-center ">
+    <div class=" headerCss h-10 w-10 rounded-full flex justify-center items-center">
+      <span class="h-2 w-2 bg-white rounded-full"></span>
+    </div>
+    <div class=" degineCss h-10 w-10 rounded-full flex justify-center items-center">
+      <span class="h-2 w-2 bg-white rounded-full"></span>
+    </div>
+    <div class=" degineCss h-10 w-10 rounded-full flex justify-center items-center">
+      <span class="h-2 w-2 bg-white rounded-full"></span>
+    </div>
+   </div>
+  <ion-icon  class="text-purple-600 h-8 w-8 " name="close-circle"  [routerLink]="['/product-details']" ></ion-icon>
+</ion-header>
+<ion-content md="ios">
+<div class="py-2 px-3 2-[100%] flex justify-start items-center flex-col bg-white ">
+  <h1 class=" font-bold text-xl clr mb-2">Address Details</h1>
+   <ion-card  *ngFor="let data of addressData" class= "bg-white  w-full h-full border-purple-600 border-2 py-3 px-2 m-0 mb-4">
+    <div class="flex justify-around items-start flex-row px-2 mb-3  border-b-gray-500">
+    <ion-radio  class="mt-1" value="dogs"></ion-radio>
+     <div class=" ml-3 flex justify-start items-start flex-col text-center">
+      <p class="text-black text-xl w-full font-bold text-start mb-3">{{data.text}}</p>
+      <h4 class="clr text-xl font-bold text-start  w-full mx-auto mb-3">{{data.addressOne}}</h4>
+    <p class="clr text-base font-medium text-start  w-full  mb-4"> {{data.addressOTwo}}</p>
+    </div>
+    
+  </div>
+  <div  class="flex justify-around items-center flex-row w-full">
+    <ion-button class="headerCss text-white text-base capitalize w-36"> 
+      <ion-icon class="text-white h-5 w-5 mr-3" name="pencil"></ion-icon>Edit</ion-button>
+    <ion-button class="headerCss text-white text-base capitalize w-36">
+       <ion-icon  class="text-white h-5 w-5 mr-3" name="trash"></ion-icon>Delete </ion-button>
+  </div>
+   </ion-card>
+   <ion-card class= "bg-white  w-4/5 h-auto border-purple-600 border-2 py-3 px-2 m-0 mb-4 flex justify-start items-start flex-row clr text-xl font-bold">
+    <ion-icon class=" clr h-7 w-7  mr-4" name="add-circle"></ion-icon>
+    Add a new address
+  </ion-card>
+  
+</div>
+</ion-content>
+<ion-footer class="w-full px-3 bg-transparent shadow-none"  [routerLink]="['/place-order']">
+  <ion-card
+class="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg w-full h-[50px] text-xl font-medium
+mx-0 my-3  justify-between  pl-2 pr-4  flex  items-center"
+  > Continue to be
+    <ion-icon class=" h-7 w-7 text-white " name="chevron-forward-outline"></ion-icon>
+  </ion-card>
+</ion-footer>

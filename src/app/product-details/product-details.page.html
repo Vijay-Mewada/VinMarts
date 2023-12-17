@@ -1,0 +1,213 @@
+<ion-header class="headerCss h-[65px] flex justify-around items-center flex-row">
+  <img class="h-20 w-20 object-contain" src="assets/vinmart.png" alt="" />
+  <ion-searchbar></ion-searchbar>
+  <ion-icon class="mic h-12 w-12" name="mic"></ion-icon>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <div class="mt-3  ml-1 mr-1">
+
+
+    <!-- Swipers -->
+    <div>
+      <swiper-container class="h-96" pagination="true">
+        <swiper-slide class="h-96" *ngFor="let data of sliders ,index as i ">
+          <div *ngIf="i == 0" class=" flex justify-between items-center flex-row w-full px-3 mt-2" style="margin-bottom: -1rem;"> 
+            <div
+              class="customColor flex justify-around items-center rounded-full h-11 w-11 flex justify-center items-center">
+             <p class="m-0 text-base text-white"> 72%</p>
+            </div>
+            <div
+              class="customColor flex justify-around items-center rounded-full p-2">
+              <ion-icon class="h-6 w-6 text-white" name="share-social"></ion-icon>
+            </div>
+          </div>
+          <img [src]="data.img" class="rounded-br-lg rounded-bl-lg h-72 w-full object-contain" />
+          <div class=" flex justify-end items-end flex-row w-full px-3" style="margin-top:-32px" > 
+            
+            <div *ngIf="i == 0"
+              class="customColor flex justify-around items-center rounded-full p-2">
+              <ion-icon class="h-6 w-6 text-white" name="heart"></ion-icon>
+            </div>
+          </div>
+        </swiper-slide>
+      </swiper-container>
+    </div>
+
+    <div *ngFor="let data of tabData5" class="ml-2">
+      <p class="pdTest font-bold">{{data.product}}</p>
+    </div>
+
+    <div *ngFor="let data of content">
+      <p class="px-2  text-black">{{data.title}}</p>
+    </div>
+
+    <div class="customColor max-w-fit rounded-full mx-2 mt-4">
+      <p class="px-3"><ion-icon name="star" class="mic"></ion-icon>
+        <small class="text-white px-2 font-bold text-md">4.2, 2832</small></p>
+    </div>
+
+    <div *ngFor="let data of priceofProduct" class="flex justify-start items-start w-full flex-row  mt-3">
+      <p class=" font-bold text-red-600 ml-2 mt-1" style="text-decoration: line-through;">₹3999</p>
+      <p class="font-bold text-2xl  pdTest ml-2">{{data.price}}</p>
+    </div>
+
+    <div class="mx-2 mt-2">
+      <div class="w-full flex justify-between text-center">
+        <div class=" flex justify-between items-center">
+          <img src="assets/Vector (2).png" alt="" class="mt-2">
+        <p class="pdTest text-md font-bold">Save More</p>
+        </div>
+        
+        <p class="pdTextpink under-line text-sm font-bold " style="text-decoration:  underline;">View all offers</p>
+      </div>
+    </div>
+
+    <div>
+      <div class="mt-2 flex justify-center items-center gap-1">
+        <div class="border-2 border-purple-700 rounded-xl p-1">
+          <!-- <p class="text-sm pdTest font-bold"> Get ₹34 off</p> -->
+          <div class="flex justify-start item">
+            <img src="assets/Vector (4).png" alt="" class="h-5 w-5 object-contain ">
+            <p class="text-sm pdTest font-bold flex justify-between items-center ml-2"> Get ₹34 off</p>
+          </div>
+          <p class="text-sm pdTest font-bold mt-2">Select online payments (UPI, Wallets, Cards)</p>
+          <p class="under-line text-sm pdTextpink font-bold mt-2 " style="text-decoration:  underline;">Get Info</p>
+        </div>
+
+        <div class="border-2 border-purple-700 rounded-xl  pt-1 pb-1 pl-1">
+          <div class="flex justify-start item">
+            <img src="assets/Vector.png" alt="" class=" h-5 w-5 object-contain">
+            <p class="text-sm pdTest font-bold flex justify-between items-center">Get Extra off</p>
+          </div>
+          <p class="text-sm pdTest font-bold mt-2">Select online payments (UPI, Wallets, Cards)</p>
+          <p class="under-line text-sm pdTextpink font-bold mt-2 " style="text-decoration:  underline;">Get Info</p>
+        </div>
+      </div>
+    </div>
+
+    <div *ngFor="let data of getProduct">
+      <p class="font-bold mt-2 mx-3 text-black">{{data.title}}</p>
+    </div>
+
+    <div class="flex justify-center items-center mt-2" *ngFor="let data of deliverProduct">
+      <ion-icon name="location" class="pdTextpink text-3xl"></ion-icon>
+      <p class=" text-black">Deliver to <span class="font-bold">{{data.userName}}</span> - {{data.city}},
+        {{data.pinCode}}</p>
+    </div>
+
+
+  <div id="accordion-collapse-1" data-accordion="collapse" class="mt-3">
+      <h2 id="accordion-collapse-heading-1" class="border-2 border-black">
+        <button type="button" class="flex items-center justify-between p-2 w-full border-2 border-black"
+          data-accordion-target="#accordion-collapse-body-1" aria-expanded="true"
+          aria-controls="accordion-collapse-body-1">
+          <span class="text-lg text-black mx-2 font-bold">Product Features</span>
+          <ion-icon name="chevron-down" class="mx-2 text-lg text-black"></ion-icon>
+        </button>
+      </h2>
+      <div id="accordion-collapse-body-1" class="hidden" aria-labelledby="accordion-collapse-heading-1">
+        <div class="border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+          <div class=" mx-1 flex justify-between items-center gap-2 mt-2">
+            <ion-button  class="customColor rounded-xl  shadow-md  mx-1">
+                <img src="assets/vinmart.png" alt="" class=" h-12 w-10  object-contain">
+                <p class=" text-white text-base font-bold">Add to Cart</p>
+            </ion-button>
+
+            <ion-button [routerLink]="['/address']"  
+            class="  text-white ttext-base font-bold customColor rounded-xl shadow-md">
+               Buy Now
+            </ion-button>
+          </div>
+
+          <div class="mt-2 mx-2 flex justify-start items-start">
+            <p class="font-bold text-black">Sold by</p>&nbsp;<span class="pdTest font-bold">Vinmarts</span>
+          </div>
+
+          <div class="mt-2">
+            <hr class="border-2 "  style="border :1px solid #5956E9"/>
+            <div class="flex justify-center items-center flex-row mx-2">
+              <div class="w-60px h-full text-center">
+                <ion-icon class="text-4xl pdTest" name="lock-closed"></ion-icon>
+                <p class="text-xs font-bold text-center">Secure Payment</p>
+              </div>
+
+              <div class="w-60px h-full text-center">
+                <ion-icon class="text-4xl pdTest" name="car"></ion-icon>
+                <p class="text-xs font-bold text-center">Free Delivery</p>
+              </div>
+
+              <div class="w-60px h-full text-center">
+                <ion-icon class="text-4xl pdTest" name="repeat"></ion-icon>
+                <p class="text-xs font-bold text-center">7 Days Replacement</p>
+              </div>
+
+              <div class="w-60px h-full text-center">
+                <ion-icon class="text-4xl pdTest" name="hardware-chip"></ion-icon>
+                <p class="text-xs font-bold text-center">6 Month Warranty</p>
+              </div>
+
+              <div class="w-60px h-full text-center">
+                <ion-icon class="text-4xl pdTest" name="compass"></ion-icon>
+                <p class="text-xs font-bold text-center">Pay on Delivery</p>
+              </div>
+
+            </div>
+            <hr class="border-2 "  style="border :1px solid #5956E9"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+    <div id="accordion-collapse" data-accordion="collapse" class="mt-3 mb-8">
+      <h2 id="accordion-collapse-heading-2" class="border-2 border-black">
+        <button type="button" class="flex items-center p-2 justify-between w-full border-2 border-black"
+          data-accordion-target="#accordion-collapse-body-2" aria-expanded="true"
+          aria-controls="accordion-collapse-body-2">
+          <span class="text-lg text-black mx-2 font-bold">Product Details</span>
+          <ion-icon name="chevron-down" class="mx-2 text-lg text-black"></ion-icon>
+        </button>
+      </h2>
+
+      <div id="accordion-collapse-body-2" class="hidden" aria-labelledby="accordion-collapse-heading-2">
+        <div class="border border-b-0 border-gray-200 dark:border-gray-700 dark:bg-gray-900">
+
+          <div>
+            <p class="text-black my-2 mx-2 text-lg font-semibold">Customer Review</p>
+            <hr class="border-1 border-black" />
+          </div>
+
+          <div *ngFor="let data of reviews" class="my-2">
+            <div class="flex justify-start items-center mx-2">
+              <div>
+                <ion-avatar class="border-2 border-black">
+                  <img [src]="data.image" class="object-contain w-full h-full" />
+                </ion-avatar>
+              </div>
+              <div class="mx-2">
+                <p class="pdTest font-bold text-lg">{{ data.userName }}</p>
+                <p class="text-orange-700"><ion-icon name="star"></ion-icon></p>
+                <p>Reviewed on {{ data.date }}</p>
+              </div>
+            </div>
+            <div class="mx-2 mt-2">
+              <h5 class="font-bold text-black text-xl">{{ data.title }}</h5>
+              <p class="text-black">{{ data.review }}</p>
+            </div>
+          </div>
+
+          <hr class="border-2 redioCss" />
+
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+</ion-content>

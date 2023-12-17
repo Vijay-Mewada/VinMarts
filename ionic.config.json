@@ -1,0 +1,7 @@
+{
+  "name": "VinMart",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

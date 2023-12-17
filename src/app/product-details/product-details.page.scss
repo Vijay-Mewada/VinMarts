@@ -1,0 +1,34 @@
+ion-searchbar {
+    --border-radius: 8px;
+}
+
+swiper-container{
+    --bullet-background-active:red;
+}
+
+swiper-slide{
+    --bullet-background-active:red;
+}
+ion-searchbar {
+    --border-radius: 8px;
+}
+
+
+swiper-container {
+    --swiper-pagination-progressbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.25);
+    --swiper-scrollbar-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.1);
+    --swiper-scrollbar-drag-bg-color: rgba(var(--ion-text-color-rgb, 0, 0, 0), 0.5);
+    --swiper-pagination-bullet-inactive-color: rgb(119, 118, 118);
+    --swiper-pagination-color: #7B68EE;
+    --swiper-pagination-progressbar-bg-color: yellow;
+    --swiper-pagination-bullet-width: 16px;
+    --swiper-pagination-bullet-height: 16px;
+    --swiper-pagination-bullet-border-radius: 4px;
+}
+ion-button{
+    width:100%;
+    height: 58px;
+    
+    background: linear-gradient(90deg, #7B68EE 4.51%, #C963F8 66.97%);
+    --background: linear-gradient(90deg, #7B68EE 4.51%, #C963F8 66.97%);
+}

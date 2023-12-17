@@ -1,0 +1,99 @@
+<ion-header class="h-[59px] headerCss w-full flex justify-center items-center text-center">
+  <img src="assets/vinmart.png" alt="" class=" h-20 w-20 object-contain">
+  <p class="text-center text-2xl text-black font-bold">Vin<span class="mart text-2xl font-bold headerText">marts</span></p>
+
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class=" bg-white py-5 px-6 h-[100%] flex justify-center items-center flex-col">
+    <h1 class="text-center font-bold text-black text-2xl mb-3">
+      Verify Your Email Address
+    </h1>
+    <h5 class="whitespace-normal  text-base text-black mb-3">
+      Verify your Email. We have sent an OTP to
+      <span class="text-xl font-bold">email&#64;mail.com </span> 
+       <span class="clr text-base"><ion-icon name="create"> </ion-icon> change</span> .</h5>
+       <form [formGroup]="otpForm" (ngSubmit)="onSubmit()" style="margin: 0rem 0.6rem;">
+        <ion-row  style="margin: 10px 0px;">
+          <ion-col size="2">
+            <ion-input type="tel" #otp1 maxlength="1" formControlName="one"
+                    (keyup)="moveFocus($event,otp2,'')"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <ion-input type="tel" #otp2 maxlength="1" formControlName="two"
+                    (keyup)="moveFocus($event,otp3,otp1)"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <ion-input type="tel" #otp3 maxlength="1" formControlName="three"
+            (keyup)="moveFocus($event,otp4,otp2)"></ion-input> 
+          </ion-col>
+          <ion-col size="2">
+            <ion-input type="tel" #otp4 maxlength="1" formControlName="four"
+            (keyup)="moveFocus($event,otp5,otp3)"></ion-input>
+          </ion-col>
+          <ion-col size="2">
+            <ion-input type="tel" #otp5 maxlength="1" formControlName="five"
+            (keyup)="moveFocus($event,otp6,otp4)"></ion-input> 
+          </ion-col>
+          <ion-col size="2">
+            <ion-input type="tel" #otp6 maxlength="1" formControlName="six"
+            (keyup)="moveFocus($event,'',otp5)"></ion-input>
+          </ion-col>
+        </ion-row>
+        <ion-row class="flex justify-center items-center font-bold  text-xl mt-2">
+          Didn't you receive any code?
+        </ion-row>
+  
+        <ion-row class="flex justify-center items-center   font-bold  text-xl  clr mb-3">
+          Resend
+        </ion-row>
+        </form>
+  <ion-button type="submit" class="submit font-bold" (click)="onSubmit()">Verify</ion-button>
+    <!-- <form [formGroup]="verifyOtp" method="get" class="digit-group" data-group-name="digits" data-autosubmit="false" autocomplete="on">
+      <ion-row>
+        <ion-col size="2">
+          <ion-input class="bg-gray-400 border-2 border-black-500 rounded-lg " #formRow type="tel" id="digit-1" name="digit-1"
+            data-next="digit-2"  formControlName="otp1"></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-input class="bg-gray-400 border-2 border-black-500 rounded-lg" #formRow type="tel" id="digit-2" name="digit-2"
+            data-next="digit-3" data-previous="digit-1" formControlName="otp2"></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-input class="bg-gray-400 border-2 border-black-500 rounded-lg" #formRow type="tel" id="digit-3" name="digit-3"
+            data-next="digit-4" data-previous="digit-2" formControlName="otp3" ></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-input class="bg-gray-400 border-2 border-black-500 rounded-lg" #formRow type="tel" id="digit-4" name="digit-4"
+            data-next="digit-5" data-previous="digit-3" formControlName="otp4" ></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-input class="bg-gray-400 border-2 border-black-500 rounded-lg" #formRow type="tel" id="digit-5" name="digit-5"
+            data-next="digit-6" data-previous="digit-4" formControlName="otp5" ></ion-input>
+        </ion-col>
+
+        <ion-col size="2">
+          <ion-input class="bg-gray-400 border-2 border-black-500 rounded-lg" #formRow type="tel" id="digit-6" name="digit-6"
+            data-previous="digit-5" formControlName="otp6"></ion-input>
+         </ion-col>
+      </ion-row>
+
+     
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button type="submit" class="submit font-bold" (click)="onSubmit()">Verify</ion-button>
+        </ion-col>
+      </ion-row>
+    </form> -->
+  </div>
+</ion-content>
+<ion-footer
+  class="h-[40px] bg-slate-300 text-black text-base flex justify-center items-center"
+  >© 2033-2024 , Vinmarts (An online offline store)</ion-footer
+>
+

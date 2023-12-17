@@ -1,0 +1,63 @@
+<ion-header class="shadow-none h-20 bg-white flex justify-around items-center">
+  <ion-icon class="clr h-8 w-10" name="arrow-back-outline" [routerLink]="['/address']" ></ion-icon>
+  <div class="h-[3px] bg-gray-600 w-56 flex justify-between items-center">
+    <div
+      class="headerCss h-10 w-10 rounded-full flex justify-center items-center"
+    >
+      <span class="h-2 w-2 bg-white rounded-full"></span>
+    </div>
+    <div
+      class="headerCss h-10 w-10 rounded-full flex justify-center items-center"
+    >
+      <span class="h-2 w-2 bg-white rounded-full"></span>
+    </div>
+    <div
+      class="bg-gray-600 h-10 w-10 rounded-full flex justify-center items-center"
+    >
+      <span class="h-2 w-2 bg-white rounded-full"></span>
+    </div>
+  </div>
+  <ion-icon class="text-purple-600 h-8 w-8" name="close-circle"></ion-icon>
+</ion-header>
+
+<ion-content md="ios">
+  <p
+    class="--redioCss font-bold text-xl flex justify-center items-center mb-6"
+  >
+    Select Payment Option
+  </p>
+  <ion-card
+    class="mb-5 h-20 --redioCss font-bold text-xl flex justify-start items-center px-5"
+  >
+    <ion-radio class="mt-1 mr-5" value="dogs"></ion-radio>
+    HDFC-Bank****oooo
+  </ion-card>
+  <ion-card
+    class="mb-5 h-20 --redioCss font-bold text-xl flex justify-start items-center px-5"
+  >
+    <ion-radio class="mt-1 mr-5" value="dogs"></ion-radio>
+    UPI
+  </ion-card>
+  <ion-card
+    class="mb-5 h-20 --redioCss font-bold text-xl flex justify-start items-center px-5"
+  >
+    <ion-radio class="mt-1 mr-5" value="dogs"></ion-radio>
+    Using Debit/Credit card
+  </ion-card>
+  <ion-card
+    class="mb-5 h-20 --redioCss font-bold text-xl flex justify-start items-center px-5"
+  >
+    <ion-radio class="mt-1 mr-5" value="dogs"></ion-radio>
+    pay on Delivery
+  </ion-card>
+</ion-content>
+<ion-footer class="w-full px-3 bbg-transparent  shadow-none ">
+  <ion-card
+class=" pl-2 pr-4 customColor text-white rounded-lg w-full h-[50px] text-xl font-medium
+mx-0 my-3
+ flex  justify-between  items-center"
+  > Place order
+    <ion-icon class=" h-7 w-7 text-white " name="chevron-forward-outline"></ion-icon>
+  </ion-card>
+</ion-footer>
+

@@ -1,0 +1,58 @@
+<ion-header class="headerCss h-[65px] flex justify-around items-center flex-row">
+  <img class="h-20 w-20 object-contain" src="assets/vinmart.png" alt="" />
+  <ion-searchbar></ion-searchbar>
+  <ion-icon class="mic h-12 w-12" name="mic"></ion-icon>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="px-2 py-4 w-full h-full bg-white">
+    <div class="flex justify-between items-center flex-row mb-3">
+      <div
+        class=" customColor flex justify-around items-center rounded-full p-2">
+        <img src="assets/Vector (3).png" class="h-3 w-3 text-white" alt="">
+      </div>
+      <div
+        class=" customColor flex justify-around items-center rounded-full px-3 py-2">
+        <p class="text-center text-white text-sm w-fit">
+          <ion-icon name="location" class="text-center text-white text-sm">
+          </ion-icon> Deliver to Username - Bhopal 445676
+        </p>
+      </div>
+      <div
+        class=" customColor flex justify-around items-center rounded-full p-2">
+        <img src="assets/Vector (3).png" class="h-3 w-3 text-white" alt="">
+      </div>
+    </div>
+
+
+    <ion-row class=" w-full">
+      <ion-col size="6" *ngFor="let data of subCtaegoryDta">
+        <ion-card class="bg-white w-full h-[310px]   shadow-md m-0 py-2">
+          <div
+            class=" customColor rounded-r-xl max-w-fit shadow-md">
+            <p class="text-white text-sm flex justify-center items-center font-medium pl-2 pr-2">Offers</p>
+          </div>
+          <div class="flex justify-between items-center flex-col">
+            <img  [routerLink]="['/product-details']"  class="h-40 object-contain" [src]="data.img" alt="">
+            <p class="clr text-xl font-medium">{{data.name}}</p>
+            <p class="clr text-base font-medium">{{data.des}}</p>
+
+          </div>
+          <div class="flex justify-around items-center flex-row">
+            <p class="clr text-base">₹ {{data.price}}</p>
+            <div
+            class=" customColor flex justify-around items-center rounded-full p-2">
+              <!-- <ion-icon class="h-5 w-5 text-white" name="cart"></ion-icon> -->
+            <img src="assets/onlinelogomaker-061822-1225-3833 3 (1).png"  class="h-6 w-6 text-white" alt="">
+
+            </div>
+            <div
+              class=" customColor flex justify-around items-center rounded-full p-2">
+              <ion-icon class="h-5 w-5 text-white" name="heart"></ion-icon>
+            </div>
+          </div>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

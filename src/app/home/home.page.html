@@ -1,0 +1,116 @@
+<ion-header class="headerCss h-[65px] flex justify-around items-center flex-row">
+  <img class="h-20 w-20 object-contain" src="assets/vinmart.png" alt="" />
+  <ion-searchbar></ion-searchbar>
+  <ion-icon class="mic h-12 w-12" name="mic"></ion-icon>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" md="ios" >
+
+  <!-- <ion-toolbar class="mt-2 bg-white " > -->
+
+    <div
+      class=" mt-2 customColor rounded-r-xl max-w-fit  shadow-md">
+      <p class="text-white text-xl flex justify-center items-center font-semibold pl-2 pr-2">Offers</p>
+    </div>
+
+
+
+    <div class="flex justify-start items-center flex-row overflow-x-scroll w-full mr-4 pl-3 mt-2">
+      <div class="ProductCol w-70px h-full flex justify-between items-center flex-col mr-4"
+        *ngFor="let data of tabData1">
+        <ion-avatar style="border-color: #7B68EE;" [routerLink]="['/sub-category']" id="imageDiv" class="rounded-full border-4 flex justify-center items-center ">
+          <img [src]="data.img" alt="" class="h-full w-full object-contain" />
+        </ion-avatar>
+        <p class="name">{{data.name}}</p>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- Swipers -->
+    <div>
+      <ion-card class="relative h-32 ">
+        <swiper-container>
+          <swiper-slide >
+            <img src="assets/carousal4.jpg" class="rounded-br-lg rounded-bl-lg  shadow-md w-full " />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="assets/carousal2.jpg" class="rounded-br-lg rounded-bl-lg  shadow-md w-full" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="assets/carousal3.jpg" class="rounded-br-lg rounded-bl-lg  shadow-md w-full" />
+          </swiper-slide>
+          <swiper-slide>
+            <img src="assets/mobile.jpg" class="rounded-br-lg rounded-bl-lg  shadow-md w-full" />
+          </swiper-slide>
+        </swiper-container>
+      </ion-card>
+
+      <div class="flex justify-center items-center">
+        <div class="absolute flex justify-center items-center gap-4 mb-4">
+          <img src="assets/carousal4.jpg" class="h-8 w-8 border-4 border-slate-950 rounded-lg shadow-lg mb-2" />
+          <img src="assets/carousal2.jpg" class="h-8 w-8 border-4 border-slate-950 rounded-lg shadow-lg mb-2" />
+          <img src="assets/carousal3.jpg" class="h-8 w-8 border-4 border-slate-950 rounded-lg shadow-lg mb-2" />
+          <img src="assets/mobile.jpg" class="h-8 w-8 border-4 border-slate-950 rounded-lg shadow-lg mb-2" />
+        </div>
+
+      </div>
+    </div>
+
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------- -->
+
+    <div class="customColor rounded-r-xl max-w-fit mt-3">
+      <p class="text-white text-xl flex justify-center items-center font-semibold pl-2 pr-2">Seasonal Sale</p>
+    </div>
+
+    <swiper-container class="mt-2" [slidesPerView]="2">
+      <swiper-slide size="1.5" *ngFor="let data2 of tabData2">
+        <ion-row class="flex justify-center items-center">
+          <ion-col class="border-2 shadow-md rounded-lg mr-2">
+            <img [src]="data2.img" class="rounded-xl h-40" />
+          </ion-col>
+        </ion-row>
+      </swiper-slide>
+    </swiper-container>
+
+
+
+    <!-- ----------------------------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div>
+      <div class="customColor rounded-r-xl max-w-fit mt-3">
+        <p class="text-white text-xl flex justify-center items-center font-semibold pl-2 pr-2">Trending</p>
+      </div>
+
+    </div>
+
+    <swiper-container class="mt-2" [slidesPerView]="2">
+      <swiper-slide size="1.5" *ngFor="let data3 of tabData3">
+        <ion-row class="flex justify-center items-center">
+          <ion-col class="border-2 shadow-md rounded-lg mr-2">
+            <img [src]="data3.img" class="rounded-xl h-40" />
+          </ion-col>
+        </ion-row>
+      </swiper-slide>
+    </swiper-container>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------------ -->
+
+    <div class="customColor rounded-r-xl max-w-fit mt-3">
+      <p class="text-white text-xl flex justify-center items-center font-semibold pl-2 pr-2">Deals on Electronics</p>
+    </div>
+
+    <swiper-container class="mt-2" [slidesPerView]="2">
+      <swiper-slide size="1.5" *ngFor="let data4 of tabData4">
+        <ion-row class="flex justify-center items-center">
+          <ion-col class="border-2 shadow-md rounded-lg mr-2">
+            <img [src]="data4.img" class="rounded-xl h-40" />
+          </ion-col>
+        </ion-row>
+      </swiper-slide>
+    </swiper-container>
+  <!-- </ion-toolbar> -->
+</ion-content>
