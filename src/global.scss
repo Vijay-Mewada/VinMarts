@@ -24,7 +24,9 @@
 // @import "@ionic/angular/css/text-alignment.css";
 // @import "@ionic/angular/css/text-transformation.css";
 // @import "@ionic/angular/css/flex-utils.css";
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   --main-bg-color: #7B68EE;
@@ -40,6 +42,10 @@
   
 
 }
+.xxs{
+  font-size: 0.5rem;
+}
+
 .pdTest{
 color: var(--pdText);
 --color: var(--pdText);
@@ -96,4 +102,17 @@ ion-content{
 }
 .customColor{
   background: var(--customColor);
+}
+
+/* Add this in your component's CSS or global CSS file */
+.thumbnail-swiper-container .swiper-wrapper {
+  transform: none !important; /* Override the existing transform */
+}
+/* Add this in your component's CSS or global CSS file */
+.shadow-m {
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.thumbnail-swiper-container .swiper-slide-active {
+  border-color: var(--main-bg-color) !important; /* Add your desired border color here */
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }

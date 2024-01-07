@@ -5,16 +5,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true" >
+  <form [formGroup]="loginForm">
 <div class="px-6 flex justify-center items-center flex-col h-full w-full bg-white ">
   <h1 class="text-center font-bold text-black text-2xl mb-3">Sign In</h1>
-  <ion-input style="margin-bottom: -10px;" class="rounded-lg rounded-s-lg" label="Email or Phone no." label-placement="floating" fill="outline"
+  <!-- <ion-input fill="outline"></ion-input> -->
+  <ion-input style="margin-bottom: -10px;" formControlName="email" class="rounded-lg rounded-s-lg mb-2 text-black" label="Email or Phone no." label-placement="floating" outline fill="outline"
     placeholder="Email or Phone no."></ion-input>
   <div class="w-full h-auto">
-    <ion-icon name="eye" class=" text-black  relative top-10 left-[88%] text-xl" slot="end"></ion-icon>
-  <ion-input class="rounded-lg rounded-s-lg mb-2" label="Password" label-placement="floating" fill="outline"
-    placeholder="Password">
+    <ion-icon name="eye" (click)="isPassHide = !isPassHide" class=" text-black relative top-10 left-[88%] text-xl z-10" slot="end"></ion-icon>
+  <ion-input class="rounded-lg rounded-s-lg mb-2 text-black" formControlName="password" label="Password" label-placement="floating" fill="outline"
+    placeholder="Password" type="{{isPassHide ? 'password' : 'text'}}">
   </ion-input>
 </div>
+
+<div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.dirty" class="error-message">
+  <p *ngIf="loginForm.get('email')!.hasError('required')" class="text-red-500">Email is required.</p>
+  <p *ngIf="loginForm.get('email')!.hasError('email')" class="text-red-500">Please enter a valid email.</p>
+</div>
+
   <p class="clr font-medium text-sm mb-4 text-end w-full" slot="end" [routerLink]="['/verify']">
     Forget Password ?
   </p>
@@ -28,7 +36,7 @@
         policy</span> .
     </p>
   </div>
-  <ion-button class="w-[100%]  h-[40px] mb-3" [routerLink]="['/tabs/home']">Sign In</ion-button>
+  <ion-button class="w-[100%]  h-[40px] mb-3" [disabled]="!loginForm.valid" (click)="onLogin()">Sign In</ion-button>
   <p class="text-black text-lg mb-2">Don't have an account</p>
   <p class="text-lg clr font-normal mb-3"  [routerLink]="['/create-account']">Sign Up</p>
  
@@ -42,8 +50,8 @@
 <p class="clr">Privacy Policy</p>
 </div>
 </div>
-
+</form>
 
 </ion-content>
-<ion-footer class="fottercss h-[40px] w-full   flex justify-center items-center text-center ft text-black text-base ">© 2033-2024 , Vinmarts (An
+<ion-footer class="fottercss h-[40px] w-full   flex justify-center items-center text-center ft text-black text-base ">© 2033-2024 , <span>vinmarts.in</span> (An
 online offline store)</ion-footer>
